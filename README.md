@@ -1,77 +1,70 @@
-# Hospital DBMS Backend
+# Getting Started with Create React App
 
-## Project Overview
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project is a backend implementation of a simple Hospital Database Management System (DBMS). The goal is to manage key hospital entities such as Patients, Doctors, Appointments, Treatments, Medications, and Departments efficiently. The system exposes RESTful API endpoints to interact with the data, supporting CRUD operations and basic business logic like cost calculations.
+## Available Scripts
 
-The backend is built with **Python** using the **FastAPI** framework and connects to a **PostgreSQL** database. We use **SQLAlchemy** for ORM (Object-Relational Mapping), **Alembic** for database migrations, and **Pydantic** models for data validation.
+In the project directory, you can run:
 
----
+### `npm start`
 
-## Current Project Structure
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-hospital_backend/
-├── app/
-│ ├── main.py # Application entry point, initializes FastAPI app and routes
-│ ├── models/ # SQLAlchemy ORM models representing database tables
-│ ├── schemas/ # Pydantic schemas for request validation and response serialization
-│ ├── crud/ # Business logic: functions for Create, Read, Update, Delete operations
-│ ├── api/ # API route definitions, grouped by entity
-│ ├── db.py # Database connection setup and session management
-│ └── utils/ # Utility helper functions (e.g., cost calculation)
-├── alembic/ # Alembic migration files to manage database schema changes
-├── requirements.txt # List of Python dependencies for the project
-├── README.md # Project overview and instructions (this file)
-└── .env # Environment variables (database URL, secrets, etc.)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Key directories and files explained:
+### `npm test`
 
-- **app/main.py**: Starts the FastAPI server and includes all API routers.
-- **app/models/**: Contains SQLAlchemy classes that map to the database tables (Patient, Doctor, Appointment, etc.).
-- **app/schemas/**: Pydantic models that define how data is validated coming into and out of the API.
-- **app/crud/**: Implements the database operations with minimal business logic, e.g. creating or fetching patients, assigning doctors to appointments, etc.
-- **app/api/**: Organizes API endpoints logically by entity (e.g., patient.py, doctor.py) to keep routes maintainable.
-- **app/db.py**: Manages the database engine and session lifecycle.
-- **app/utils/**: Contains helper functions such as calculating treatment costs based on related entities.
-- **alembic/**: Contains migration scripts for incremental schema changes to the database.
-- **.env**: Holds sensitive information such as database connection string, not tracked by Git.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
----
+### `npm run build`
 
-## What Has Been Implemented So Far
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Basic project structure set up with FastAPI and SQLAlchemy.
-- Connection to PostgreSQL database configured via environment variables.
-- Initial SQLAlchemy models defined for all core entities: Patient, Doctor, Appointment, Treatment, Medication, Department.
-- Basic CRUD operations created for these entities, with API routes limited to 3–4 per entity.
-- Minimal business logic included, such as treatment cost calculation based on medications.
-- Alembic initialized for handling database migrations.
-- Git repository set up and connected to GitHub for collaborative development.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
----
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Next Steps
+### `npm run eject`
 
-- Implement API endpoints for the remaining entities.
-- Add authentication and user management (optional for this project).
-- Expand business logic as needed for treatment and appointment workflows.
-- Write tests for API endpoints and database operations.
-- Connect frontend with backend APIs for a complete system.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
----
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## How to Run the Project Locally
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-1. Clone the repository.
-2. Create a `.env` file with your PostgreSQL connection string, e.g.: DATABASE_URL=postgresql://username:password@localhost/hospital_db
-3. Install dependencies:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-```bash
-pip install -r requirements.txt
-```
-4. Initialize the database migrations and upgrade the database schema:
-alembic upgrade head
+## Learn More
 
-5. Run the FastAPI server:
-uvicorn app.main:app --reload
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

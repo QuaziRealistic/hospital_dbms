@@ -92,7 +92,7 @@ CREATE TABLE Turns (
     appointment_id INTEGER NOT NULL,                -- fk
     treatment_name VARCHAR(100) NOT NULL,         -- fk
 
-    PRIMARY KEY (appointment_id, t_name),         -- composite pk
+    PRIMARY KEY (appointment_id, treatment_name),         -- composite pk
 
     CONSTRAINT fk_turns_appointment
         FOREIGN KEY (appointment_id) REFERENCES Appointment(appointment_id)
